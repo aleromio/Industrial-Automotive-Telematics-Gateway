@@ -34,10 +34,11 @@ This project is a high-end Industrial IoT Gateway for vehicle telematics. It is 
 
 
 ## 📸 Hardware Showcase
-![Preview](ST1_1.png)
-![Preview](ST1_2.png)
-![Preview](ST1_3.png)
-![Preview](ST1_4.jpeg)
-![Preview](ST1_5.jpeg)
+![Preview](media/ST1_1.png)
+![Preview](media/ST1_2.png)
+![Preview](media/ST1_3.png)
+![Preview](media/ST1_4.jpeg)
+![Preview](media/ST1_5.jpeg)
+![Preview](media/ST1_6.jpeg)
 
 [⬅ Back to Main Portfolio](https://github.com/aleromio)
