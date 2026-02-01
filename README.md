@@ -1,39 +1,76 @@
-# 🚛 Industrial Automotive Telematics Gateway
+# Industrial & Automotive Telematics Gateway
 
-## Project Overview
-This project is a high-end Industrial IoT Gateway for vehicle telematics. It is designed to bridge the gap between heavy-duty and light-duty vehicles ECUs and cloud analytics, featuring a robust architecture for data persistence, remote management, and high-precision tracking.
+This repository showcases a non-confidential example of an industrial telematics gateway architecture used in large-scale fleet management and IoT monitoring systems.
 
-## 🛠️ Advanced Engineering Features
+The design reflects real production patterns applied in automotive and industrial deployments with thousands of active devices in the field.
 
-### 1. Industrial-Grade Hardware Design
-* **The Challenge:** Automotive environments are harsh (voltage spikes, extreme temperatures, and vibration).
-* **The Solution:** Designed hardware to handle Load Dumps. Optimized the layout for thermal stability and vibration resistance using automotive-grade components. High efficiency switched DC/DC power source with termal management on PCB. 
+---
 
+## 🔧 Project Overview
 
-### 3. Robust Data Persistence & Offline Mode
-* **The Challenge:** Maintaining data integrity during long-haul trips through areas with zero cellular coverage.
-* **The Solution:** Implemented an internal **Non-Volatile Memory buffer**. The firmware manages a "Store and Forward" logic, logging all events with millisecond precision using a dedicated **RTCC (Real-Time Clock Calendar)** and transmitting them automatically once LTE-CatM1 connectivity is restored.
+The system acts as an embedded gateway responsible for:
 
-### 4. Edge Intelligence & Diagnostics
-* **Communication Datalogging:** Developed a comprehensive internal logger for all MCU-to-Modems commands and responses, facilitating rapid debugging and system health monitoring in the field.
+- Vehicle data acquisition via CAN Bus (J1939 compatible)
+- Cellular connectivity using LTE-M / NB-IoT modems
+- GNSS positioning and time synchronization
+- Remote firmware updates (FOTA)
+- Low-power operation optimized for automotive battery environments
 
-### 5. Remote Management
-* * **Firmware Over-The-Air:** The system architecture supports **FOTA updates**, allowing for remote feature deployment and security patching without physical vehicle access, significantly reducing maintenance Opex.
+---
 
+## 👨‍💻 My Role
 
-## 📋 Detailed Hardware Specifications
+**End-to-End Embedded System Development:**
 
-| Component | Technical Details |
-| **Connectivity** | LTE Modem |
-| **GNSS** | High-sensitivity engine for precise positioning & speed tracking |
-| **Vehicle Interface** | Isolated CAN Bus + Multi-channel I/O (Analog & Digital) |
-| **Power System** | Li-Ion Battery Backup + Smart Charging Circuitry | 
-| **Interfaces** | **UART** for local configuration and diagnostics |
-| **Sensors** | 3-Axis Accelerometer + RTCC for time-stamping |
-| **Energy Management** | Advanced Power Save Modes (PSM) for minimal vehicle battery drain |
+- Hardware architecture and PCB design
+- Firmware architecture and driver development
+- Communication stack integration (CAN, LTE, GNSS)
+- Bootloader and OTA update flow design
+- Production testing strategy (FCT)
 
+---
+
+## 🛠 Technical Stack
+
+**Firmware:**
+- Language: Embedded C (Bare-Metal)
+- Architecture: Layered firmware design (HAL + Drivers + Application)
+- Bootloader + OTA ready structure
+
+**Hardware & Interfaces:**
+- CAN Bus (Vehicle Diagnostics / Telematics)
+- UART, SPI, I2C
+- LTE-M / NB-IoT modem interface
+- GNSS module integration
+
+**Power Management:**
+- Automotive transient protection
+- Advanced low-power modes
+- Sleep scheduling and battery preservation strategies
+
+---
+
+## 🧱 Firmware Architecture Overview
+Application Layer ↓ Communication Manager (CAN / LTE / GNSS) ↓ Driver Abstraction Layer ↓ Hardware Abstraction Layer (HAL)
+
+This structure enables scalability, maintainability and production-grade reliability.
+
+---
+
+## 📦 Production-Oriented Design Considerations
+
+- Non-blocking communication drivers
+- Watchdog supervision
+- Fault recovery mechanisms
+- Robust modem reconnection handling
+- OTA-safe firmware partitioning strategy
+
+---
 
 ## 📸 Hardware Showcase
+
+Industrial-grade automotive PCB design with EMC-aware layout and multi-layer routing:
+
 ![Preview](media/ST1_1.png)
 ![Preview](media/ST1_2.png)
 ![Preview](media/ST1_3.png)
@@ -41,4 +78,14 @@ This project is a high-end Industrial IoT Gateway for vehicle telematics. It is 
 ![Preview](media/ST1_5.jpeg)
 ![Preview](media/ST1_6.jpeg)
 
+---
+
+## 📌 Note
+
+This repository contains only public, non-confidential examples.  
+Commercial firmware and proprietary schematics are protected under NDA and are not included.
+
+---
+
 [⬅ Back to Main Portfolio](https://github.com/aleromio)
+
