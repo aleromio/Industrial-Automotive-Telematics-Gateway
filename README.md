@@ -42,6 +42,18 @@ The system acts as an embedded gateway responsible for:
 - UART, SPI, I2C
 - LTE-M / NB-IoT modem interface
 - GNSS module integration
+- Acelerometer
+- Li-Ion charger
+- BLE
+- Digital Inputs and Outputs
+- RS485
+- K-line interface
+- 8Mb Internal flash
+- RTCC
+- Load Switching
+- Antenna removal recognition
+- Anti Tampering
+  
 
 **Power Management:**
 - Automotive transient protection
